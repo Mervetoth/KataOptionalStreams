@@ -1,7 +1,6 @@
 package org.example.kataoptionalstreams.streams;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class EquipesStream {
     public static void main(String[] args) {
@@ -18,7 +17,7 @@ public class EquipesStream {
         List<String> equipesUniques = equipes.stream()
                 .flatMap(List::stream)          // Fusionne toutes les listes
                 .distinct()                     // Supprime les doublons
-                .collect(Collectors.toList());  // Résultat dans une nouvelle liste
+                .toList();  // Résultat dans une nouvelle liste
 
         System.out.println("\ngetNomParDefaut Équipes uniques (après flatMap + distinct) :");
         equipesUniques.forEach(equipe -> System.out.println("- " + equipe));

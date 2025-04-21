@@ -1,7 +1,6 @@
 package org.example.kataoptionalstreams.combined;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class ProxiadOptionalStream {
     public static void main(String[] args) {
@@ -19,7 +18,7 @@ public class ProxiadOptionalStream {
         List<String> valides = noms.stream()
                 .flatMap(Optional::stream)             //  Supprime les Optionals vides
                 .map(String::toUpperCase)              //  Transforme en MAJUSCULES
-                .collect(Collectors.toList());         //  Collecte en List<String>
+                .toList();         //  Collecte en List<String>
 
         //  Affichage
         System.out.println("\n Valeurs extraites et transformées :");
